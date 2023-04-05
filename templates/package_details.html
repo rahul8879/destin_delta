@@ -1,0 +1,630 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <!-- favicon -->
+
+      <link rel="icon" type="image/png" href="{% static 'assets/images/favicon.png' %}">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap/css/bootstrap.min.css' %}" media="all">
+      <!-- jquery-ui css -->
+      <link rel="stylesheet" type="text/css" href="{% static 'assets/vendors/jquery-ui/jquery-ui.min.css' %}">
+      <!-- fancybox box css -->
+      <link rel="stylesheet" type="text/css" href="{% static 'assets/vendors/fancybox/dist/jquery.fancybox.min.css' %}">
+      <!-- Fonts Awesome CSS -->
+      <link rel="stylesheet" type="text/css" href="{% static 'assets/vendors/fontawesome/css/all.min.css' %}">
+      <!-- Elmentkit Icon CSS -->
+      <link rel="stylesheet" type="text/css" href="{% static 'assets/vendors/elementskit-icon-pack/assets/css/ekiticons.css' %}">
+      <!-- slick slider css -->
+      <link rel="stylesheet" type="text/css" href="{% static 'assets/vendors/slick/slick.css' %}">
+      <link rel="stylesheet" type="text/css" href="{% static 'assets/vendors/slick/slick-theme.css' %}">
+      <!-- google font -->
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+      <!-- Custom CSS -->
+      <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+            <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+      
+      
+      <title>{{single_tours.name}}</title>
+   </head>
+   <body class="home">
+      <div id="siteLoader" class="site-loader">
+         <div class="preloader-content">
+            <img src="{% static 'assets/images/loader1.gif' %}" alt="">
+         </div>
+      </div>
+      <div id="page" class="page">
+         <!-- site header html start  -->
+         <header id="masthead" class="site-header">
+            <!-- header html start -->
+            <div class="top-header">
+               <div class="container">
+                  <div class="top-header-inner">
+                     <div class="header-contact text-left">
+                        <a href="tel:+01977259912">
+                           <i aria-hidden="true" class="icon icon-phone-call2"></i>
+                           <div class="header-contact-details">
+                              <span class="contact-label">For Further Inquires :</span>
+                              <h5 class="header-contact-no">+91 9152091676</h5>
+                           </div>
+                        </a>
+                     </div>
+                     <div class="site-logo text-center">
+                        <h1 class="site-title">
+                           <a href="index.html">
+
+                            <img src="{% static 'logo.png' %}" alt="Logo">
+                           </a>
+                        </h1>
+                     </div>
+                     <div class="header-icon text-right">
+                        <div class="header-search-icon d-inline-block">
+                           <a href="#">
+                              <i aria-hidden="true" class="fas fa-search"></i>
+                           </a>
+                        </div>
+                        <div class="offcanvas-menu d-inline-block">
+                           <a href="#">
+                              <i aria-hidden="true" class="icon icon-burger-menu"></i>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="bottom-header">
+               <div class="container">
+                  <div class="bottom-header-inner d-flex justify-content-between align-items-center">
+                     <div class="header-social social-icon">
+                        <ul>
+                           <li>
+                              <a href="https://www.facebook.com" target="_blank">
+                                 <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                              </a>
+                           </li>
+                           <li>
+                              <a href="https://www.twitter.com" target="_blank">
+                                 <i class="fab fa-twitter" aria-hidden="true"></i>
+                              </a>
+                           </li>
+                           <li>
+                              <a href="https://www.youtube.com" target="_blank">
+                                 <i class="fab fa-youtube" aria-hidden="true"></i>
+                              </a>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="navigation-container d-none d-lg-block">
+                        <nav id="navigation" class="navigation">
+                           <ul>
+                              <li class="menu-active">
+                                 <a href="/">Home</a>
+                              </li>
+                              <li>
+                                 <a href="/">about us</a>
+                              </li>
+                              <li>
+                                 <a href="/">destination</a>
+                              </li>
+                              <li class="menu-item-has-children">
+                                 <a href="/">packages</a>
+                                 <ul>
+                                    <li>
+                                       <a href="/">Packages</a>
+                                    </li>
+                                 
+
+                                 </ul>
+                              </li>
+                              </li>
+                                 <a href="contact.html">contact us</a>
+                              </li>
+                           </ul>
+                        </nav>
+                     </div>
+                     <div class="header-btn">
+                        <a href="" class="round-btn" data-toggle="modal" data-target="#exampleModal" >Book Now</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="mobile-menu-container"></div>
+         </header>
+
+         
+                     <!-- Modal start -->
+                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <!-- <h5 class="modal-title" id="exampleModalLabel">Traveler Information</h5> -->
+                              <h5 style="color:black">Traveler Information. </h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                           
+                            <div class="modal-body">
+                               
+                                <form method="POST" action="submit_traveler_form/travel_details/1">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <label for="name">Name</label>
+                                        <input type="text" class="form-control form-control-sm" id="name" name="name" placeholder="Enter your name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="age">Age</label>
+                                        <input type="number" class="form-control form-control-sm" id="age" name="age" placeholder="Enter your age">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="people">Number of People</label>
+                                        <input type="number" class="form-control form-control-sm" id="people" name="num_people" placeholder="Enter number of people">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="days">Number of Days</label>
+                                        <input type="number" class="form-control form-control-sm" id="days" name="num_days" placeholder="Enter number of days">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="mobile">Mobile Number</label>
+                                        <input type="tel" class="form-control form-control-sm" id="mobile" name="mobile_number" placeholder="Enter mobile number">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      
+
+                   <!-- Model end here -->
+      
+         <!-- ***site header html end*** -->
+         <main id="content" class="site-main">
+            <section class="package-inner-page">
+               <!-- ***Inner Banner html start form here*** -->
+               <div class="inner-banner-wrap">
+                  <div class="inner-baner-container" style="background-image: url({{single_tours.image.url}});">
+                     <div class="container">
+                        <div class="inner-banner-content">
+                           <h1 class="page-title">{{single_tours.name}}</h1>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- ***Inner Banner html end here*** -->
+               <!-- ***career section html start form here*** -->
+               <div class="inner-package-detail-wrap">
+                  <div class="container">
+                     <div class="row">
+                        <div class="col-lg-8 primary right-sidebar">
+                           <div class="single-packge-wrap">
+                              <div class="single-package-head d-flex align-items-center">
+                                 <div class="package-title">
+                                    <h2>{{single_tours.name}}</h2>
+                                    <div class="rating-start-wrap">
+                                       <div class="rating-start">
+                                          <span style="width: 80%"></span>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="package-price">
+                                    <h6 class="price-list">
+                                       <span>₹{{single_tours.price}}</span>
+                                       / per person
+                                    </h6>
+                                 </div>
+                              </div>
+                              <div class="package-meta">
+                                 <ul>
+                                    <li>
+                                       <i class="fas fa-clock"></i>
+                                      {{single_tours.duration}}
+                                    </li>
+                                    <li>
+                                       <i class="fas fa-user-friends"></i>
+                                       pax: 10
+                                    </li>
+                                   
+                                 </ul>
+                              </div>
+                              <figure class="single-package-image">
+                                 <img src="{{single_tours.image.url}}" alt="">
+                              </figure>
+                              <div class="package-content-detail">
+                                 <article class="package-overview">
+                                    <h3>OVERVIEW :</h3>
+                                    <p> {{single_tours.description}}</p>
+                                   
+                                 </article>
+                                 <!-- <article class="package-include bg-light-grey">
+                                    <h3>INCLUDE & EXCLUDE :</h3>
+                                    <ul>
+                                       <li><i class="fas fa-check"></i>Specialized bilingual guide</li>
+                                       <li><i class="fas fa-times"></i>Guide Service Fee</li>
+                                       <li><i class="fas fa-check"></i>Private Transport</li>
+                                       <li><i class="fas fa-times"></i>Room Service Fees</li>
+                                       <li><i class="fas fa-check"></i>Entrance Fees</li>
+                                       <li><i class="fas fa-times"></i>Driver Service Fee</li>
+                                       <li><i class="fas fa-check"></i>Breakfast And Lunch Box</li>
+                                       <li><i class="fas fa-times"></i>Any Private Expenses</li>
+                                    </ul>
+                                 </article> -->
+                                 <article class="package-ininerary">
+                                    <h3>ITINERARY :</h3>
+                                    <p>Here is a detailed plan of your travel activities, including the places you will visit, the activities you will participate in, and the approximate schedule for each day of your trip</p>
+                                    <ul>
+                                        {% for itinerary in itineraries%}
+                                       <li>
+                                          <i aria-hidden="true" class="fas fa-dot-circle"></i>
+                                          <span>Day {{ itinerary.day }}</span>
+                                          {{itinerary.description}}
+                                       </li>
+                                       {% endfor %}
+                                      
+                                    </ul>
+                                 </article>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-4">
+                           <div class="sidebar">
+                              <div class="booking-form-wrap">
+                                 <div class="booking-form-inner primary-bg">
+                                    <h3>BOOKING FORM</h3>
+                                    <p>Book your Sundarbans adventure now! Enjoy comfortable stays, personalized service, and a breathtaking natural setting. Reserve your spot with just a few clicks.</p>
+                                    <form method="get" class="booking-form">
+                                       <p>
+                                          <input type="text" name="name" placeholder="Your Name...">
+                                       </p>
+                                       <p>
+                                          <input type="email" name="email" placeholder="Your Email...">
+                                       </p>
+                                       <p class="width-5">
+                                          <label>Checkin Date</label>
+                                          <input class="input-date-picker" type="text" name="s" placeholder="MM / DD / YY" autocomplete="off" readonly="readonly">
+                                       </p>
+                                       <p class="width-5">
+                                          <label>Checkout Date</label>
+                                          <input class="input-date-picker" type="text" name="s" placeholder="MM / DD / YY" autocomplete="off" readonly="readonly">
+                                       </p>
+                                       <p>
+                                          <button type="submit" class="outline-btn outline-btn-white">INQUIRY NOW</button>
+                                       </p>
+                                    </form>
+                                 </div>
+                              </div>
+                              <div class="related-package">
+                                 <h3>RELATED IMAGES</h3>
+                                 <p>Book your Sundarbans adventure now! Enjoy comfortable stays, personalized service, and a breathtaking natural setting..</p>
+                                 <div class="related-package-slide">
+                                    <div class="related-package-item">
+                                       <img src="{% static 'assets/images/nature.jpg' %}" alt="">
+                                    </div>
+                                    <div class="related-package-item">
+                                       <img src="{% static 'assets/images/tiger.png' %}" alt="">
+                                    </div>
+                                    <div class="related-package-item">
+                                       <img src="{% static 'assets/images/nature_2.jpg' %}" alt="">
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="package-map">
+                               <center> <a href="#" onclick="myPopupFunction()"><img href="/" src="{% static 'assets/images/Travel_banner.jpg' %}"></a></center>
+                              </div>
+                              <div class="package-list">
+                                 <div class="overlay"></div>
+                                 <h4>MORE PACKAGES</h4>
+                                 <ul>
+                                    <li>
+                                       <a href="#"><i aria-hidden="true" class="icon icon-arrow-right-circle"></i>Vacation Packages</a>
+                                    </li>
+                                    <li>
+                                       <a href="#"><i aria-hidden="true" class="icon icon-arrow-right-circle"></i>Homeymoon Packages</a>
+                                    </li>
+                                    <li>
+                                       <a href="#"><i aria-hidden="true" class="icon icon-arrow-right-circle"></i>New Year Packages</a>
+                                    </li>
+                                    <li>
+                                       <a href="#"><i aria-hidden="true" class="icon icon-arrow-right-circle"></i>Weekend Packages</a>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- ***career section html start form here*** -->
+            </section>
+         </main>
+         <!-- ***site footer html start form here*** -->
+         <footer id="colophon" class="site-footer footer-primary">
+            <div class="top-footer">
+               <div class="container">
+                  <div class="upper-footer">
+                     <div class="row">
+                        <div class="col-lg-3 col-sm-6">
+                           <aside class="widget widget_text">
+                              <div class="footer-logo">
+
+
+                                 <a href="/"><img src="{% static 'logo.png' %}" alt=""></a>
+                              </div>
+                              <div class="textwidget widget-text">
+                                Journey to the heart of the Sunderbans and experience nature like never before.
+                              </div>
+                           </aside>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                           <aside class="widget widget_latest_post widget-post-thumb">
+                              <h3 class="widget-title">RECENT POST</h3>
+                              <ul>
+                                {% for all_blg in all_blog%}
+                                 {% if forloop.counter <= 3 %}
+                               
+                                 <li>
+                                    <figure class="post-thumb">
+                                       <a href="{all_blog.get_url}"><img src="{{all_blg.image.url}}" alt=""></a>
+                                    </figure>
+                                    <div class="post-content">
+                                       <h6>
+                                          <a href="{{all_blog.get_url}}">{{all_blg.title}}</a>
+                                       </h6>
+                                       <div class="entry-meta">
+                                          <span class="posted-on">
+                                             <a href="blog-archive.html">{{all_blg.pub_date}}</a>
+                                          </span>
+                                       </div>
+                                    </div>
+                                 </li>
+                                 {% endif %}
+                                 {% endfor %}
+                              </ul>
+                           </aside>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <aside class="widget widget_text text-center">
+                                <h3 class="widget-title">CONTACT US</h3>
+                                <div class="textwidget widget-text">
+                                   <p>Feel free to contact and<br/> reach us !!</p>
+                                   <ul>
+                                      <li>
+                                         <a href="tel:+01988256203">
+                                            <i aria-hidden="true" class="icon icon-phone1"></i>
+                                           +91 9152091676
+                                         </a>
+                                      </li>
+                                      <li>
+                                         <a href="mailtop:info@domain.com">
+                                            <i aria-hidden="true" class="icon icon-envelope1"></i>
+                                            info@destindelta.in
+                                         </a>
+                                      </li>
+                                      <li>
+                                         <i aria-hidden="true" class="icon icon-map-marker1"></i>
+                                         Kolkata
+                                      </li>
+                                   </ul>
+                                </div>
+                             </aside>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                           <aside class="widget">
+                              <h3 class="widget-title">Gallery</h3>
+                              <div class="gallery gallery-colum-3">
+                                 <figure class="gallery-item">
+                                    <a href="{% static 'assets/images/img10.jpg' %}" data-fancybox="gallery-1">
+                                       <img src="{% static 'assets/images/img21.jpg' %}" alt="">
+                                    </a>
+                                 </figure>
+                                 <figure class="gallery-item">
+                                    <a href="assets/images/img28.jpg" data-fancybox="gallery-1">
+                                       <img src="assets/images/img22.jpg" alt="">
+                                    </a>
+                                 </figure>
+                                 <figure class="gallery-item">
+                                    <a href="assets/images/img14.jpg" data-fancybox="gallery-1">
+                                       <img src="assets/images/img23.jpg" alt="">
+                                    </a>
+                                 </figure>
+                                 <figure class="gallery-item">
+                                    <a href="assets/images/img15.jpg" data-fancybox="gallery-1">
+                                       <img src="assets/images/img24.jpg" alt="">
+                                    </a>
+                                 </figure>
+                                 <figure class="gallery-item">
+                                    <a href="assets/images/img12.jpg" data-fancybox="gallery-1">
+                                       <img src="assets/images/img25.jpg" alt="">
+                                    </a>
+                                 </figure>
+                                 <figure class="gallery-item">
+                                    <a href="assets/images/img13.jpg" data-fancybox="gallery-1">
+                                       <img src="assets/images/img26.jpg" alt="">
+                                    </a>
+                                 </figure>
+                              </div>
+                           </aside>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="lower-footer">
+                     <div class="row align-items-center">
+                        <div class="col-lg-6">
+                           <div class="footer-newsletter">
+                              <p>Subscribe our newsletter for more update & news !!</p>
+                              <form class="newsletter">
+                                 <input type="email" name="email" placeholder="Enter Your Email">
+                                 <button type="submit" class="outline-btn outline-btn-white">Subscribe</button>
+                              </form>
+                           </div>
+                        </div>
+                        <div class="col-lg-6 text-right">
+                           <div class="social-icon">
+                              <ul>
+                                 <li>
+                                    <a href="https://www.facebook.com/" target="_blank">
+                                       <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="https://www.twitter.com/" target="_blank">
+                                       <i class="fab fa-twitter" aria-hidden="true"></i>
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="https://www.youtube.com/" target="_blank">
+                                       <i class="fab fa-youtube" aria-hidden="true"></i>
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="https://www.instagram.com/" target="_blank">
+                                       <i class="fab fa-instagram" aria-hidden="true"></i>
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="https://www.linkedin.com/" target="_blank">
+                                       <i class="fab fa-linkedin" aria-hidden="true"></i>
+                                    </a>
+                                 </li>
+                              </ul>
+                           </div>
+                           <div class="footer-menu">
+                              <ul>
+                                 <li>
+                                    <a href="/">Privacy Policy</a>
+                                 </li>
+                                 <li>
+                                    <a href="/">Term & Condition</a>
+                                 </li>
+                                 <li>
+                                    <a href="/">FAQ</a>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="bottom-footer">
+               <div class="container">
+                  <div class="copy-right text-center">Copyright &copy; 2023 DestinDelta. All rights reserved.</div>
+               </div>
+            </div>
+         </footer>
+         <!-- ***site footer html end*** -->
+         <a id="backTotop" href="#" class="to-top-icon">
+            <i class="fas fa-chevron-up"></i>
+         </a>
+         <!-- ***custom search field html*** -->
+         <div class="header-search-form">
+            <div class="container">
+               <div class="header-search-container">
+                  <form class="search-form" role="search" method="get" >
+                     <input type="text" name="s" placeholder="Enter your text...">
+                  </form>
+                  <a href="#" class="search-close">
+                     <i class="fas fa-times"></i>
+                  </a>
+               </div>
+            </div>
+         </div>
+         <!-- ***custom search field html*** -->
+         <!-- ***custom top bar offcanvas html*** -->
+         <div id="offCanvas" class="offcanvas-container">
+            <div class="offcanvas-inner">
+               <div class="offcanvas-sidebar">
+                  <aside class="widget author_widget">
+                     <h3 class="widget-title">OUR PROPRIETOR</h3>
+                     <div class="widget-content text-center"> 
+                        <div class="profile"> 
+                           <figure class="avatar"> 
+                              <img src="assets/images/img21.jpg" alt=""> 
+                           </figure> 
+                           <div class="text-content"> 
+                              <div class="name-title"> 
+                                 <h4> Aditya</h4> 
+                              </div> 
+                              <p>Aditya is the owner of a tours business. He is an experienced and passionate entrepreneur who is dedicated to providing exceptional travel experiences for his clients. With his expertise and commitment to customer satisfaction, Aditya has built a reputation as a trusted and reliable tour operator in the industry.</p> 
+                           </div> 
+                           <div class="socialgroup"> 
+                              <ul> 
+                                 <li> <a target="_blank" href="#"> <i class="fab fa-facebook"></i> </a> </li> 
+                                 <li> <a target="_blank" href="#"> <i class="fab fa-google"></i> </a> </li> 
+                                 <li> <a target="_blank" href="#"> <i class="fab fa-twitter"></i> </a> </li> 
+                                 <li> <a target="_blank" href="#"> <i class="fab fa-instagram"></i> </a> </li> 
+                                 <li> <a target="_blank" href="#"> <i class="fab fa-pinterest"></i> </a> </li> 
+                              </ul> 
+                           </div> 
+                        </div> 
+                     </div>
+                  </aside>
+                  <aside class="widget widget_text text-center">
+                     <h3 class="widget-title">CONTACT US</h3>
+                     <div class="textwidget widget-text">
+                        <p>Feel free to contact and<br/> reach us !!</p>
+                        <ul>
+                           <li>
+                              <a href="tel:+01988256203">
+                                 <i aria-hidden="true" class="icon icon-phone1"></i>
+                                 +91 9733512602
+                              </a>
+                           </li>
+                           <li>
+                              <a href="mailtop:info@domain.com">
+                                 <i aria-hidden="true" class="icon icon-envelope1"></i>
+                                 info@destindelta.com
+                              </a>
+                           </li>
+                           <li>
+                              <i aria-hidden="true" class="icon icon-map-marker1"></i>
+                              Kolkata
+                           </li>
+                        </ul>
+                     </div>
+                  </aside>
+               </div>
+               <a href="#" class="offcanvas-close">
+                  <i class="fas fa-times"></i>
+               </a>
+            </div>
+            <div class="overlay"></div>
+         </div>
+         <!-- ***custom top bar offcanvas html*** -->
+      </div>
+
+      <!-- JavaScript -->
+   
+      <script src="{% static 'assets/vendors/jquery/jquery.js' %}"></script>
+      <script src="{% static 'assets/vendors/waypoint/waypoints.js' %}"></script>
+      <script src="{% static 'assets/vendors/bootstrap/js/bootstrap.min.js' %}"></script>
+      
+      <script src="{% static 'assets/vendors/jquery-ui/jquery-ui.min.js' %}"></script>
+      <script src="{% static 'assets/vendors/countdown-date-loop-counter/loopcounter.js' %}"></script>
+      <script src="{% static 'assets/vendors/counterup/jquery.counterup.min.js' %}"></script>
+      <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+      
+      <script src="{% static 'assets/vendors/masonry/masonry.pkgd.min.js' %}"></script>
+      <script src="{% static 'assets/vendors/slick/slick.min.js' %}"></script>
+      <script src="{% static 'assets/vendors/fancybox/dist/jquery.fancybox.min.js' %}"></script>
+      <script src="{% static 'assets/vendors/slick-nav/jquery.slicknav.js' %}"></script>
+      <script src="{% static 'assets/js/custom.min.js' %}"></script>
+   </body>
+</html>
