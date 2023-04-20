@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -23,11 +24,11 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = 'bi_2pl0q*i4ebgfy_7lqczrqj62sl_f3mmb*pt=_m-_k+ze1tl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-CSRF_TRUSTED_ORIGINS = ['']
+# CSRF_TRUSTED_ORIGINS = ['']
 
 
 # Application definition
@@ -78,12 +79,12 @@ WSGI_APPLICATION = 'destindelta.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 # DATABASES = {
 #     'default': {
@@ -95,16 +96,16 @@ WSGI_APPLICATION = 'destindelta.wsgi.application'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField' 
 # Amazon RDS 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'demo_db',
-        'USER': 'postgres',
-        'PASSWORD': 'testrahul',
-        'HOST': 'database-2.ct1rk3rvelqc.eu-north-1.rds.amazonaws.com',
-        'PORT': '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'demo_db',
+#         'USER': 'postgres',
+#         'PASSWORD': 'testrahul',
+#         'HOST': 'database-2.ct1rk3rvelqc.eu-north-1.rds.amazonaws.com',
+#         'PORT': '5432',
+#     }
+# }
 
 
 
@@ -143,8 +144,6 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
-USE_L10N = True
-
 USE_TZ = True
 
 
@@ -152,9 +151,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'destindelta/static'),]
 
-STATIC_ROOT = BASE_DIR /'static'
-STATICFILES_DIRS = ['destindelta/static']
 
 
 MEDIA_URL = '/media/'
@@ -166,11 +165,11 @@ ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 # Amazon S3 Configuration
 
-AWS_ACCESS_KEY_ID     = "AKIASRSHIPOG7KELAAGQ"
-AWS_SECRET_ACCESS_KEY ="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"
-AWS_STORAGE_BUCKET_NAME="destindelta-bucket-static"
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATICFILES_STORAGE ='storages.backends.s3boto3.S3Boto3Storage'
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-AWS_S3_FILE_OVERWRITE = False
+# AWS_ACCESS_KEY_ID     = "AKIASRSHIPOG7KELAAGQ"
+# AWS_SECRET_ACCESS_KEY ="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"
+# AWS_STORAGE_BUCKET_NAME="destindelta-bucket-static"
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# STATICFILES_STORAGE ='storages.backends.s3boto3.S3Boto3Storage'
+# AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+# AWS_S3_FILE_OVERWRITE = False
 
