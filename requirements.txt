@@ -23,5 +23,5 @@ sqlparse==0.4.3
 twilio==8.0.0
 urllib3==1.26.15
 yarl==1.8.2
-psycopg2==2.9.6
+psycopg2-binary==2.9.6
 
