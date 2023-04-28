@@ -99,10 +99,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'demo_db',
-        'USER': 'postgres',
-        'PASSWORD': 'testrahul',
-        'HOST': 'database-2.ct1rk3rvelqc.eu-north-1.rds.amazonaws.com',
+        'NAME': 'destindelta',
+        'USER': 'rahul',
+        'PASSWORD': 'Rahultest',
+        'HOST': 'database-1.cdrcltcddta8.us-east-2.rds.amazonaws.com',
         'PORT': '5432',
     }
 }
@@ -156,6 +156,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'destindelta/static'),]
 
 
 
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR /'media'
 
@@ -165,11 +166,11 @@ ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 # Amazon S3 Configuration
 
-# AWS_ACCESS_KEY_ID     = "AKIASRSHIPOG7KELAAGQ"
-# AWS_SECRET_ACCESS_KEY ="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"
-# AWS_STORAGE_BUCKET_NAME="destindelta-bucket-static"
-# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-# STATICFILES_STORAGE ='storages.backends.s3boto3.S3Boto3Storage'
-# AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-# AWS_S3_FILE_OVERWRITE = False
+AWS_ACCESS_KEY_ID     = "AKIASRSHIPOG7KELAAGQ"
+AWS_SECRET_ACCESS_KEY ="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"
+AWS_STORAGE_BUCKET_NAME="destindelta-bucket-static"
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE ='storages.backends.s3boto3.S3Boto3Storage'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_FILE_OVERWRITE = False
 
