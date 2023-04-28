@@ -28,71 +28,71 @@
       <!-- Custom CSS -->
       <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 
-      <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+         <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <!-- jQuery -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <!-- Bootstrap JS -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+      <!-- Bootstrap JS -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+      
+      <!-- Bootstrap JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+      <script src="{% static 'utils.js' %}"></script>
+
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+
     
-    <!-- Bootstrap JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
-    <script src="{% static 'utils.js' %}"></script>
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
-
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-wff0rM/r3rFCk/XZDg02Y0Vu14O5D6Ilyl6UzX9U5O5k01+aWQeHbMI0i6wYMNfg7hN+a2NvGefP9oC52zj8/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-      <script>
-        function openBookingForm() {
-            console.log('function called')
-          $('#bookingModal').modal('show');
-        }
-      
-        function processBookingForm(event) {
-          event.preventDefault();
-      
-          // Get the input values from the form
-          const name = $('#name').val();
-          const email = $('#email').val();
-          const phone = $('#phone').val();
-          const message = $('#message').val();
-      
-          // Send the input values to the Django backend
-          $.ajax({
-            url: '/process-booking/',
-            method: 'POST',
-            data: {
-              'name': name,
-              'email': email,
-              'phone': phone,
-              'message': message,
-              csrfmiddlewaretoken: '{{ csrf_token }}'
-            },
-            success: function(response) {
-              // Send the details on WhatsApp
-              const whatsappUrl = `https://api.whatsapp.com/send?phone=1234567890&text=${encodeURIComponent(response.message)}`;
-              window.open(whatsappUrl, '_blank');
-      
-              // Redirect to the home page
-              window.location.href = '/';
-              
-              // Show a success message
-              alert('Your booking has been sent. Our team will contact you shortly.');
-            },
-            error: function(xhr, status, error) {
-              // Show an error message
-              alert('An error occurred while processing your booking. Please try again later.');
-            }
-          });
-        }
-      </script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-wff0rM/r3rFCk/XZDg02Y0Vu14O5D6Ilyl6UzX9U5O5k01+aWQeHbMI0i6wYMNfg7hN+a2NvGefP9oC52zj8/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+         <script>
+         function openBookingForm() {
+               console.log('function called')
+            $('#bookingModal').modal('show');
+         }
+         
+         function processBookingForm(event) {
+            event.preventDefault();
+         
+            // Get the input values from the form
+            const name = $('#name').val();
+            const email = $('#email').val();
+            const phone = $('#phone').val();
+            const message = $('#message').val();
+         
+            // Send the input values to the Django backend
+            $.ajax({
+               url: '/process-booking/',
+               method: 'POST',
+               data: {
+               'name': name,
+               'email': email,
+               'phone': phone,
+               'message': message,
+               csrfmiddlewaretoken: '{{ csrf_token }}'
+               },
+               success: function(response) {
+               // Send the details on WhatsApp
+               const whatsappUrl = `https://api.whatsapp.com/send?phone=1234567890&text=${encodeURIComponent(response.message)}`;
+               window.open(whatsappUrl, '_blank');
+         
+               // Redirect to the home page
+               window.location.href = '/';
+               
+               // Show a success message
+               alert('Your booking has been sent. Our team will contact you shortly.');
+               },
+               error: function(xhr, status, error) {
+               // Show an error message
+               alert('An error occurred while processing your booking. Please try again later.');
+               }
+            });
+         }
+         </script>
 
 
       
