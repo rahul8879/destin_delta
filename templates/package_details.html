@@ -273,11 +273,14 @@
                                         {% for itinerary in itineraries%}
                                        <li>
                                           <i aria-hidden="true" class="fas fa-dot-circle"></i>
-                                          <span>Day {{ itinerary.day }}</span>
-                                          {{itinerary.description}}
+                                          <span><b>Day {{ itinerary.day }} :</b> </span>
+                                          {{ itinerary.description|linebreaksbr }}
+                                          
                                        </li>
                                        {% endfor %}
                                       
+
+                                 
                                     </ul>
                                  </article>
                               </div>
