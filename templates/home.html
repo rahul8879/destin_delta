@@ -50,54 +50,7 @@
 
     
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-wff0rM/r3rFCk/XZDg02Y0Vu14O5D6Ilyl6UzX9U5O5k01+aWQeHbMI0i6wYMNfg7hN+a2NvGefP9oC52zj8/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-         <script>
-         function openBookingForm() {
-               console.log('function called')
-            $('#bookingModal').modal('show');
-         }
-         
-         function processBookingForm(event) {
-            event.preventDefault();
-         
-            // Get the input values from the form
-            const name = $('#name').val();
-            const email = $('#email').val();
-            const phone = $('#phone').val();
-            const message = $('#message').val();
-         
-            // Send the input values to the Django backend
-            $.ajax({
-               url: '/process-booking/',
-               method: 'POST',
-               data: {
-               'name': name,
-               'email': email,
-               'phone': phone,
-               'message': message,
-               csrfmiddlewaretoken: '{{ csrf_token }}'
-               },
-               success: function(response) {
-               // Send the details on WhatsApp
-               const whatsappUrl = `https://api.whatsapp.com/send?phone=1234567890&text=${encodeURIComponent(response.message)}`;
-               window.open(whatsappUrl, '_blank');
-         
-               // Redirect to the home page
-               window.location.href = '/';
-               
-               // Show a success message
-               alert('Your booking has been sent. Our team will contact you shortly.');
-               },
-               error: function(xhr, status, error) {
-               // Show an error message
-               alert('An error occurred while processing your booking. Please try again later.');
-               }
-            });
-         }
-         </script>
 
-
-      
-      
       <title>DestinDelta : Discover nature's beauty with Sundervan.</title>
    </head>
    <body class="home">
@@ -114,18 +67,17 @@
                <div class="container">
                   <div class="top-header-inner">
                      <div class="header-contact text-left">
-                        <a href="tel:+01977259912">
+                        <a href="tel:+919733512602">
                            <i aria-hidden="true" class="icon icon-phone-call2"></i>
                            <div class="header-contact-details">
                               <span class="contact-label">For Further Inquires :</span>
-                              <h5 class="header-contact-no">+91 9152091676</h5>
+                              <h5 class="header-contact-no">+91 9733512602</h5>
                            </div>
                         </a>
                      </div>
                      <div class="site-logo text-center">
                         <h1 class="site-title">
                            <a href="/">
-
                             <img src="{% static 'logo.png' %}" alt="Logo">
                            </a>
                         </h1>
@@ -251,30 +203,33 @@
                <div class="container">
                
                   <form action="enquiry/customer/1" method="POST" class="trip-search-inner d-flex">
-                    {% csrf_token %}
+                     {% csrf_token %}
                      <div class="group-input">
                         <label for="name"> Your Name </label>
-                        <input type="text" name="s" placeholder="Enter Your Name" id="name"  required>
+                        <input type="text" name="name" placeholder="Enter Your Name" id="name" required>
                      </div>
                      <div class="group-input">
                         <label for="mob_num"> Mobile Number* </label>
-                        <input id="mob_num" type="text" name="s" placeholder="Enter your Mobile Number">
+                        <input id="mob_num" type="text" name="mobile_number" placeholder="Enter your Mobile Number">
                      </div>
                      <div class="group-input width-col-3">
                         <label for="chknDate"> Checkin Date* </label>
                         <i class="far fa-calendar"></i>
-                        <input  id="chknDate" class="input-date-picker" type="text" name="s" placeholder="MM / DD / YY" autocomplete="off" readonly="readonly">
+                        <input id="chknDate" class="input-date-picker" type="text" name="checkin_date" placeholder="MM / DD / YY"
+                           autocomplete="off" readonly="readonly">
                      </div>
                      <div class="group-input width-col-3">
                         <label for="chkOtDt"> Checkout Date* </label>
                         <i class="far fa-calendar"></i>
-                        <input id="chkOtDt" class="input-date-picker" type="text" name="s" placeholder="MM / DD / YY" autocomplete="off" readonly="readonly">
+                        <input id="chkOtDt" class="input-date-picker" type="text" name="checkout_date" placeholder="MM / DD / YY"
+                           autocomplete="off" readonly="readonly">
                      </div>
                      <div class="group-input width-col-3">
                         <input type="submit" name="travel-search" value="INQUIRE NOW">
                         <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
                      </div>
                   </form>
+
                </div>
             </div>
             <!-- ***search search field html end here*** -->
@@ -667,53 +622,45 @@
                         </a>
   
                      <!-- Modal start -->
-                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <!-- <h5 class="modal-title" id="exampleModalLabel">Traveler Information</h5> -->
-                              <h5 style="color:black">Traveler Information. </h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
+                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                     aria-hidden="true">
+                     <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                           <div class="modal-header"
+                              style="background-image:url('https://example.com/background-image.jpg'); color:#FFFFFF;">
+                              <h5 class="modal-title">Traveler Information</h5>
+                              <button type="button" data-dismiss="modal" aria-label="Close">
+                                 <span aria-hidden="true">&times;</span>
                               </button>
-                            </div>
-                           
-                            <div class="modal-body">
-                               
-                                <form method="POST" action="submit_traveler_form/travel_details/1">
-                                    {% csrf_token %}
-                                    <div class="form-group">
-                                        <label for="name">Name</label>
-                                        <input type="text" class="form-control form-control-sm" id="name" name="name" placeholder="Enter your name">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="age">Age</label>
-                                        <input type="number" class="form-control form-control-sm" id="age" name="age" placeholder="Enter your age">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="people">Number of People</label>
-                                        <input type="number" class="form-control form-control-sm" id="people" name="num_people" placeholder="Enter number of people">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="days">Number of Days</label>
-                                        <input type="number" class="form-control form-control-sm" id="days" name="num_days" placeholder="Enter number of days">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="mobile">Mobile Number</label>
-                                        <input type="tel" class="form-control form-control-sm" id="mobile" name="mobile_number" placeholder="Enter mobile number">
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            </div>
-                          </div>
+                           </div>
+                           <div class="modal-body">
+                              <form method="POST" action="submit_traveler_form/travel_details/1">
+                                 {% csrf_token %}
+                                 <div class="form-group">
+                                    <label for="name"><i class="fas fa-user"></i> Name</label>
+                                    <input type="text" class="form-control form-control-sm" id="name" name="name"
+                                       placeholder="Enter your name">
+                                 </div>
+                                
+                                 <div class="form-group">
+                                    <label for="people"><i class="fas fa-users"></i> Number of People</label>
+                                    <input type="number" class="form-control form-control-sm" id="people" name="num_people"
+                                       placeholder="Enter number of people">
+                                 </div>
+                                
+                                 <div class="form-group">
+                                    <label for="mobile"><i class="fas fa-phone"></i> Mobile Number</label>
+                                    <input type="tel" class="form-control form-control-sm" id="mobile" name="mobile_number"
+                                       placeholder="Enter mobile number">
+                                 </div>
+                                 <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Submit</button>
+                              </form>
+                           </div>
+                          
                         </div>
-                      </div>
-                      
-                      
-
+                     </div>
+                  </div>
+                  
                    <!-- Model end here -->
 
                     

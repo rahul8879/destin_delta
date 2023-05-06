@@ -1,0 +1,39 @@
+<!-- Modal start -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header"
+                style="background-image:url('https://example.com/background-image.jpg'); color:#FFFFFF;">
+                <h5 class="modal-title">Traveler Information</h5>
+                <button type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="submit_traveler_form/travel_details/1">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="name"><i class="fas fa-user"></i> Name</label>
+                        <input type="text" class="form-control form-control-sm" id="name" name="name"
+                            placeholder="Enter your name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="people"><i class="fas fa-users"></i> Number of People</label>
+                        <input type="number" class="form-control form-control-sm" id="people" name="num_people"
+                            placeholder="Enter number of people">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobile"><i class="fas fa-phone"></i> Mobile Number</label>
+                        <input type="tel" class="form-control form-control-sm" id="mobile" name="mobile_number"
+                            placeholder="Enter mobile number">
+                    </div>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Submit</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
