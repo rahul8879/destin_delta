@@ -34,7 +34,6 @@ def home(request):
 
     return render(request,'home.html',context)
 
-
 def package_details(request,tour_slug):
     try:
         single_tours = Package.objects.get(slug=tour_slug)
