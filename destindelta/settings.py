@@ -80,12 +80,12 @@ WSGI_APPLICATION = 'destindelta.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 # DATABASES = {
 #     'default': {
@@ -97,16 +97,16 @@ WSGI_APPLICATION = 'destindelta.wsgi.application'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField' 
 # Amazon RDS 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'destindelta',
-        'USER': 'rahul',
-        'PASSWORD': 'Rahultest',
-        'HOST': 'database-1.cdrcltcddta8.us-east-2.rds.amazonaws.com',
-        'PORT': '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'destindelta',
+#         'USER': 'rahul',
+#         'PASSWORD': 'Rahultest',
+#         'HOST': 'database-1.cdrcltcddta8.us-east-2.rds.amazonaws.com',
+#         'PORT': '5432',
+#     }
+# }
 
 
 
